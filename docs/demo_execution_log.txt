@@ -1,0 +1,79 @@
+
+=== 1. Kunci dibuat ===
+{
+  "dh_parameters": "demo_run/keys/dh_parameters.pem",
+  "receiver_dh_private": "demo_run/keys/receiver_dh_private.pem",
+  "receiver_dh_public": "demo_run/keys/receiver_dh_public.pem",
+  "receiver_rsa_private": "demo_run/keys/receiver_rsa_private.pem",
+  "receiver_rsa_public": "demo_run/keys/receiver_rsa_public.pem",
+  "sender_dh_private": "demo_run/keys/sender_dh_private.pem",
+  "sender_dh_public": "demo_run/keys/sender_dh_public.pem",
+  "sender_dsa_private": "demo_run/keys/sender_dsa_private.pem",
+  "sender_dsa_public": "demo_run/keys/sender_dsa_public.pem"
+}
+
+=== 2. File contoh ===
+{
+  "cover": "demo_run/samples/cover.png",
+  "cover_capacity_payload_bytes": 719992,
+  "plaintext": "demo_run/samples/pesan_raihan.txt",
+  "plaintext_sha256": "e48688c8f189652f11ba320242937f6b9424188e3638e508240982f83c3d8466"
+}
+
+=== Demo Diffie-Hellman ===
+{
+  "function": "Diffie-Hellman exchange + HKDF-SHA256",
+  "match": true,
+  "receiver_secret_sha256": "a97431b748cc2d9027ca3daaeee935efcbadde149ff49f0d64930c7a7aa8b9ee",
+  "sender_secret_sha256": "a97431b748cc2d9027ca3daaeee935efcbadde149ff49f0d64930c7a7aa8b9ee"
+}
+
+=== 3. Enkripsi + steganografi ===
+{
+  "dh_seed_sha256": "a97431b748cc2d9027ca3daaeee935efcbadde149ff49f0d64930c7a7aa8b9ee",
+  "input_file": "demo_run/samples/pesan_raihan.txt",
+  "output_stego": "demo_run/output/stego_raihan.png",
+  "payload_json_size": "2.20 KB",
+  "plaintext_sha256": "e48688c8f189652f11ba320242937f6b9424188e3638e508240982f83c3d8466",
+  "plaintext_size": "660 B",
+  "signature_valid_at_creation": true,
+  "stego_stats": {
+    "capacity_payload_bytes": 719992,
+    "carrier_bytes": 2880000,
+    "cover_size": [
+      1200,
+      800
+    ],
+    "framed_bytes": 2259,
+    "payload_bytes": 2251,
+    "used_carriers": 9036
+  }
+}
+
+=== 4. Ekstraksi + dekripsi ===
+{
+  "algorithm": {
+    "hash": "SHA-256",
+    "key_exchange": "Diffie-Hellman + HKDF-SHA256",
+    "key_protection": "RSA-OAEP-SHA256",
+    "signature": "DSA-SHA256",
+    "steganography": "Modified randomized LSB, 2 bits per RGB carrier byte",
+    "symmetric": "AES-256-GCM"
+  },
+  "dh_seed_sha256": "a97431b748cc2d9027ca3daaeee935efcbadde149ff49f0d64930c7a7aa8b9ee",
+  "original_filename": "pesan_raihan.txt",
+  "output_file": "demo_run/output/recovered_pesan_raihan.txt",
+  "plaintext_size": "660 B",
+  "recovered_sha256": "e48688c8f189652f11ba320242937f6b9424188e3638e508240982f83c3d8466",
+  "signature_status": "valid",
+  "stego_image": "demo_run/output/stego_raihan.png"
+}
+
+=== 5. Verifikasi akhir ===
+{
+  "plaintext_sha256": "e48688c8f189652f11ba320242937f6b9424188e3638e508240982f83c3d8466",
+  "recovered_file": "demo_run/output/recovered_pesan_raihan.txt",
+  "recovered_sha256": "e48688c8f189652f11ba320242937f6b9424188e3638e508240982f83c3d8466",
+  "same_content": true,
+  "stego_file": "demo_run/output/stego_raihan.png"
+}

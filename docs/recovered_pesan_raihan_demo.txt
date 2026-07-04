@@ -1,0 +1,12 @@
+Laporan uji program Kriptografi Hibrida + Steganografi
+Nama : Raihan Azhari Lubis
+NIM  : 231111619
+
+Pesan ini digunakan sebagai contoh plaintext. Program akan mengenkripsi file ini
+menggunakan AES-256-GCM, melindungi kunci AES menggunakan RSA-OAEP-SHA256,
+menandatangani paket menggunakan DSA-SHA256, menghitung SHA-256 untuk integritas,
+menurunkan seed posisi LSB dengan Diffie-Hellman + HKDF-SHA256, lalu menyisipkan
+paket terenkripsi ke dalam citra PNG menggunakan modifikasi LSB dua bit secara acak.
+
+Jika dekripsi berhasil dan hash SHA-256 cocok, berarti kerahasiaan, autentikasi,
+integritas, pertukaran kunci, dan steganografi berjalan sesuai rancangan.
