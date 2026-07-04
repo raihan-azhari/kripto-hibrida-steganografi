@@ -340,30 +340,6 @@ Karakteristik metode yang digunakan:
 
 ---
 
-## 🧾 Cara Upload ke GitHub
-
-Jika repository sudah dibuat di GitHub, upload project menggunakan CMD dengan perintah berikut:
-
-```cmd
-git init
-git add .
-git commit -m "Program kriptografi hibrida dan steganografi"
-git branch -M main
-git remote add origin https://github.com/raihan-azhari/kripto-hibrida-steganografi.git
-git push -u origin main
-```
-
-Jika remote sudah pernah ditambahkan tetapi salah, gunakan:
-
-```cmd
-git remote set-url origin https://github.com/raihan-azhari/kripto-hibrida-steganografi.git
-git push -u origin main
-```
-
-Jika GitHub menolak akses karena masih login ke akun lama, hapus credential GitHub lama melalui **Windows Credential Manager**, lalu ulangi proses `git push` dan login menggunakan akun GitHub yang benar.
-
----
-
 ## 📌 Catatan
 
 Program ini dibuat untuk memenuhi tugas program Kriptografi Hibrida dan Steganografi. Seluruh proses utama sudah disediakan dalam bentuk perintah CLI agar mudah diuji, dijalankan ulang, dan didokumentasikan.
